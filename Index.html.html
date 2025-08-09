@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aderito Pizza</title>
+    <style>
+        /* CSS BÁSICO (Dia 3 e 4) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        header {
+            background-color: #563ce7;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            background-color: #c0392b;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            width: 250px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- CABEÇALHO (Dia 2 - HTML Semântico) -->
+    <header>
+        <h1>Melhor Pizzaria da Cidade de Chimoio </h1>
+    </header>
+
+    <!-- MENU DE NAVEGAÇÃO -->
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- SEÇÃO PRINCIPAL (Dia 4 - Flexbox) -->
+    <main>
+        <section id="inicio">
+            <h2 style="text-align: center;">Bem-vindo a Aderito Pizza-à melhor pizza da região!</h2>
+            <div class="card-container">
+                <!-- CARD 1 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80" alt="Pizza Margherita">
+                    <h3>Pizza Margherita</h3>
+                    <p>Molho de tomate, mussarela, manjericão fresco.</p>
+                    <p><strong>600 MZN</strong></p>
+                </div>
+                
+                <!-- CARD 2 -->
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80" alt="Pizza Calabresa">
+                    <h3>Pizza Calabresa</h3>
+                    <p>Molho de tomate, mussarela, calabresa fatiada.</p>
+                    <p><strong>1000MZN</strong></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- RODAPÉ (Dia 1 - HTML Básico) -->
+    <footer id="contato">
+        <p>Telefone: (+258) 879433366</p>
+        <p>WhatsApp: <a href="https://wa.me/+258879433366" style="color: #4CAF50;">Clique aqui</a></p>
+    </footer>
+</body>
+</html> 
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aderito Pizza</h1>
+        <p>PiZZa da Pontaria</p>
+    </header>
+    
+    <div class="container">
+        <!-- SEÇÃO DO MAPA -->
+        <section id="mapa">
+            <h2>Onde nos encontrar</h2>
+            <div class="mapa-container">
+                <!-- Mapa do Google Maps (substitua o src com seu endereço) -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7540.623473289038!2d33.47644569556391!3d-19.093975417040298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x192b353891498207%3A0x73d5f61a3e76d2a0!2sTambara%202!5e0!3m2!1spt-PT!2smz!4v1754747302469!5m2!1spt-PT!2smz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+                    
+                </iframe>
+            </div>
+        </section>
+        
+        <!-- SEÇÃO DE COMENTÁRIOS -->
+        <section id="comentarios">
+            <h2>O que nossos clientes dizem</h2>
+            
+            <div class="comentario">
+                <p class="autor">Maria Silva</p>
+                <p class="data">10/05/2025</p>
+                <p>"Melhor Pizza que ja comi aqui na cidade de chimoio."</p>
+            </div>
+            
+            <div class="comentario">
+                <p class="autor">João Santos</p>
+                <p class="data">22/04/2025</p>
+                <p>"Atendimento excelente e Pizza feita de modo natural a forma caseira deliciosa. Recomendo!"</p>
+            </div>
+            
+            <!-- FORMULÁRIO PARA NOVOS COMENTÁRIOS -->
+            <h3>Deixe seu comentário!</h3>
+            <form id="form-comentario">
+                <input type="text" placeholder="Seu nome" required>
+                <textarea placeholder="Seu comentário" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </div>
+    
+    <script>
+        // JavaScript básico para adicionar comentários
+        document.getElementById('form-comentario').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nome = this.querySelector('input').value;
+            const texto = this.querySelector('textarea').value;
+            const data = new Date().toLocaleDateString();
+            
+            const novoComentario = document.createElement('div');
+            novoComentario.className = 'comentario';
+            novoComentario.innerHTML = `
+                <p class="autor">${nome}</p>
+                <p class="data">${data}</p>
+                <p>"${texto}"</p>
+            `;
+            
+            document.getElementById('comentarios').insertBefore(novoComentario, this);
+            
+            // Limpa o formulário
+            this.reset();
+            
+            alert('Obrigado pelo seu comentário!');
+        });
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aderito Pizza</title>
+    <style>
+        /* [Seus estilos existentes...] */
+
+        /* NOVOS ESTILOS PARA O CHAT */
+        #chatbot-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #10a37f; /* Verde do ChatGPT */
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        #chatbot-popup {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 350px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            overflow: hidden;
+            z-index: 1001;
+        }
+
+        .chat-header {
+            background-color: #10a37f;
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+        }
+
+        .chat-messages {
+            height: 300px;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f7f7f8;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+        }
+
+        .bot-message {
+            background: #e5e5ea;
+            align-self: flex-start;
+        }
+
+        .user-message {
+            background: #10a37f;
+            color: white;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        #send-button {
+            background: #10a37f;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- [Seu conteúdo Aderito Pizza da...] -->
+
+    <!-- Botão do Chat -->
+    <button id="chatbot-button">💬</button>
+
+    <!-- Popup do Chat -->
+    <div id="chatbot-popup">
+        <div class="chat-header">
+            Assistente Virtual
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                Olá! Sou Aderito, Pizza da pontaria, cidade de Chimoio, bairro Tambara 2, localizado no Maundas Bar,. Como posso ajudar voce hoje?
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Digite sua mensagem...">
+            <button id="send-button">➤</button>
+        </div>
+    </div>
+
+    <script>
+        // Controle do Chat
+        const chatButton = document.getElementById('chatbot-button');
+        const chatPopup = document.getElementById('chatbot-popup');
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+
+        // Abrir/fechar chat
+        chatButton.addEventListener('click', () => {
+            chatPopup.style.display = chatPopup.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Enviar mensagem
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === '') return;
+
+            // Adiciona mensagem do usuário
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user-message';
+            userMessage.textContent = message;
+            chatMessages.appendChild(userMessage);
+
+            // Limpa input
+            userInput.value = '';
+
+            // Simula resposta do bot (você pode personalizar)
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.className = 'message bot-message';
+                
+                // Respostas automáticas baseadas em palavras-chave
+                if (message.toLowerCase().includes('horário')) {
+                    botMessage.textContent = 'Funcionamos de segunda a domingo, das 08h às 23h, tambem fazemos por encomenda.';
+                } 
+                else if (message.toLowerCase().includes('cardápio')) {
+                    botMessage.textContent = 'Nosso cardápio completo está disponível no site! Temos destaque para promocao para familias aos sábados.';
+                }
+                else if (message.toLowerCase().includes('reserva')) {
+                    botMessage.textContent = 'Para reservas, ligue para (+258)879433366 ou envie uma mensagem pelo WhatsApp.';
+                }
+                else {
+                    botMessage.textContent = 'Para mais informações, visite nosso site:https://aderitopizzadapontaria.blogspot.com/ ou ligue para (+258)879433366. formas de pagamento Mpeza e Emola:879433366';
+                }
+
+                chatMessages.appendChild(botMessage);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 800);
+        }
+
+        // Enviar ao clicar no botão ou pressionar Enter
+        sendButton.addEventListener('click', sendMessage);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        // Fechar ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!chatPopup.contains(e.target) && e.target !== chatButton) {
+                chatPopup.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
